@@ -5,8 +5,10 @@ export function compact(array) {
   // 初始化变量
   let result = []
   let resIndex = 0
+  // 边界处理
   if (array == null)
     return []
+  // 通过隐式类型转换过滤假值
   for (const value of array) {
     if (value)
       result[resIndex++] = value
