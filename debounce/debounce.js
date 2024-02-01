@@ -2,18 +2,17 @@
     不考虑传入maxWait和throttle的兼容性
   */
 function isObject(value) {
-  return Object.prototype.toString.call(value) === "[object Object]"
+  return Object.prototype.toString.call(value) === '[object Object]'
 }
 
-export function debounce(fn, wait, options) {
+export default function debounce(fn, wait, options) {
   let lastArgs, lastThis, timerId, lastCallTime
 
   let leading = false // 先执行后延时，默认false
   let trailing = true // 先延时后执行，默认true
 
-  if (typeof fn !== "function") {
-    throw new TypeError("Expected a function")
-  }
+  if (typeof fn !== 'function')
+    throw new TypeError('Expected a function')
 
   // 初始化
   wait = +wait || 500
@@ -27,7 +26,6 @@ export function debounce(fn, wait, options) {
     return fn.apply(lastThis, lastArgs)
   }
 
-
   // 计算剩余时长:这里不是很理解
   // function remainingWait(time) {
   //   const timeSinceLastCall = time - lastCallTime
@@ -38,9 +36,9 @@ export function debounce(fn, wait, options) {
   // 定时器执行逻辑
   function timerExpired() {
     const time = +new Date()
-    if (shouldInvoke(time)) {
+    if (shouldInvoke(time))
       return trailingEdge()
-    }
+
     // 这里计算距离最后一次点击还需要等待的时间差，在此期间timerId一直有值，不会去执行目标函数
     timerId = setTimeout(timerExpired, wait)
     // timerId = setTimeout(timerExpired, remainingWait(time))
@@ -48,9 +46,8 @@ export function debounce(fn, wait, options) {
 
   function trailingEdge() {
     timerId = undefined
-    if (trailing && lastArgs) {
+    if (trailing && lastArgs)
       return invokeFunc()
-    }
   }
 
   function leadingEdge() {

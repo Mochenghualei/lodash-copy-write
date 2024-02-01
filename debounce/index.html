@@ -12,7 +12,7 @@
   <button id="btn">click</button>
 </body>
 <script type="module">
-  import { debounce } from "./debounce.js"
+  import debounce from "./debounce.js"
   const btn = document.getElementById("btn")
   const fn = debounce(() => console.log(888), 500)
   btn.addEventListener('click', fn)
