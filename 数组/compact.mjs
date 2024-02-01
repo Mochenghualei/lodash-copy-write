@@ -3,7 +3,7 @@
  */
 export function compact(array) {
   // 初始化变量
-  let result = []
+  const result = []
   let resIndex = 0
   // 边界处理
   if (array == null)
