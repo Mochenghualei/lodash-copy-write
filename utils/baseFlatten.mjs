@@ -1,4 +1,4 @@
-export default function baseFlatten(array, depth, predicate, isStrict, result) {
+export function baseFlatten(array, depth, predicate, isStrict, result) {
   // 初始化变量
   predicate || (predicate = isFlattenable)
   result || (result = [])
