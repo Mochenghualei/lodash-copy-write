@@ -13,6 +13,6 @@ const reHasUnicode = RegExp(`[${rsZWJ}${rsAstralRange}${rsComboRange}${rsVarRang
 /**
  * 校验是否包含unicode字符
  */
-export default function hasUnicode(string) {
+export function hasUnicode(string) {
   return reHasUnicode.test(string)
 }

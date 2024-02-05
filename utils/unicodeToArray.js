@@ -27,6 +27,6 @@ const rsSymbol = `(?:${[rsNonAstralCombo, rsCombo, rsRegional, rsSurrPair, rsAst
 // eslint-disable-next-line no-misleading-character-class
 const reUnicode = RegExp(`${rsFitz}(?=${rsFitz})|${rsSymbol + rsSeq}`, 'g')
 
-export default function unicodeToArray(string) {
+export function unicodeToArray(string) {
   return string.match(reUnicode) || []
 }

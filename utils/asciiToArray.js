@@ -1,3 +1,3 @@
-export default function asciiToArray(string) {
+export function asciiToArray(string) {
   return string.split('')
 }
