@@ -28,9 +28,6 @@
     }
   },
   "lint-staged": {
-    "*": [
-      "pnpm lint:fix",
-      "git add ."
-    ]
+    "*": "pnpm lint:fix"
   }
 }
