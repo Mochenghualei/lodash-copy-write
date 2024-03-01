@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import hasUnicode from './hasUnicode'
+import { hasUnicode } from './hasUnicode'
 
 const res = hasUnicode('\u036F')
 

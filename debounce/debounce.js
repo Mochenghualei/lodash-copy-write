@@ -73,6 +73,7 @@ export default function debounce(fn, wait, options) {
 
     lastCallTime = time // 记录此次调用时间为lastCallTime，用以下次调用时计算距此次调用的时长
     lastArgs = args // 记录此次调用入参
+    // eslint-disable-next-line ts/no-this-alias
     lastThis = this // 记录此次调用上下文
     if (isInvoking) {
       // 首次调用时timerId为undefined

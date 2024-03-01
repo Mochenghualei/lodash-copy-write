@@ -3,14 +3,34 @@
   "scripts": {
     "test": "vitest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "lodash": "^4.17.21",
     "vitest": "^1.2.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
-    "eslint": "^8.56.0"
+    "@commitlint/types": "^19.0.3",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "pnpm commitlint --edit $1"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "pnpm lint:fix",
+      "git add ."
+    ]
   }
 }
