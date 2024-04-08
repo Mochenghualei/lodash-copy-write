@@ -1,23 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lodash</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lodash</title>
-</head>
-
-
-<body>
-  <button id="btn">click</button>
-</body>
-<script type="module">
-  import debounce from "./debounce.js"
-  const btn = document.getElementById("btn")
-  const fn = debounce(() => console.log(888), 500)
-  btn.addEventListener('click', fn)
-</script>
-
-
-
+  <body>
+    <button id="btn">click</button>
+  </body>
+  <script type="module">
+    import debounce from './debounce.js'
+    const btn = document.getElementById('btn')
+    const fn = debounce(() => console.log(888), 500)
+    btn.addEventListener('click', fn)
+  </script>
 </html>

@@ -1,5 +1,4 @@
 import { expect, it } from 'vitest'
-import _ from 'lodash'
 import { endsWith } from './endsWith.mjs'
 
 it('endsWith', () => {
