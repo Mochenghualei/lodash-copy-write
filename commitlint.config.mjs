@@ -1,11 +1,8 @@
-import type { UserConfig } from '@commitlint/types'
-import { RuleConfigSeverity } from '@commitlint/types'
-
-const Configuration: UserConfig = {
+const Configuration = {
   extends: ['@commitlint/config-conventional'],
 
   rules: {
-    'type-enum': [RuleConfigSeverity.Error, 'always', [
+    'type-enum': [2, 'always', [
       'build',
       'chore',
       'ci',
