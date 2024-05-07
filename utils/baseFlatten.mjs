@@ -17,7 +17,7 @@ export function baseFlatten(array, depth, predicate, isStrict, result) {
     }
     else if (!isStrict) {
       // 否则，将当前值添加至result当前位置
-      result[result.length] = value
+      result[result.length] = value``
     }
   }
 
