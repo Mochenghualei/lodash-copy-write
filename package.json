@@ -5,7 +5,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "taze": "npx taze major"
   },
   "dependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -16,8 +17,8 @@
     "vitest": "^1.6.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.16.2",
-    "eslint": "^8.57.0",
+    "@antfu/eslint-config": "^2.18.0",
+    "eslint": "^9.2.0",
     "eslint-plugin-format": "^0.1.1"
   },
   "husky": {

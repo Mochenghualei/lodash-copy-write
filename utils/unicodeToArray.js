@@ -24,7 +24,7 @@ const rsSeq = rsOptVar + reOptMod + rsOptJoin
 const rsNonAstralCombo = `${rsNonAstral}${rsCombo}?`
 const rsSymbol = `(?:${[rsNonAstralCombo, rsCombo, rsRegional, rsSurrPair, rsAstral].join('|')})`
 
-// eslint-disable-next-line no-misleading-character-class
+// eslint-disable-next-line no-misleading-character-class, regexp/no-dupe-disjunctions
 const reUnicode = RegExp(`${rsFitz}(?=${rsFitz})|${rsSymbol + rsSeq}`, 'g')
 
 export function unicodeToArray(string) {

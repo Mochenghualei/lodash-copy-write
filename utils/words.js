@@ -45,7 +45,7 @@ const rsOrdUpper = '\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])'
 const rsSeq = rsOptVar + reOptMod + rsOptJoin
 const rsEmoji = `(?:${[rsDingbat, rsRegional, rsSurrPair].join('|')})${rsSeq}`
 
-// eslint-disable-next-line no-misleading-character-class
+// eslint-disable-next-line no-misleading-character-class, regexp/prefer-character-class, regexp/no-dupe-characters-character-class, regexp/control-character-escape
 const reUnicodeWords = RegExp([
   `${rsUpper}?${rsLower}+${rsOptContrLower}(?=${[rsBreak, rsUpper, '$'].join('|')})`,
   `${rsMiscUpper}+${rsOptContrUpper}(?=${[rsBreak, rsUpper + rsMiscLower, '$'].join('|')})`,
@@ -62,7 +62,7 @@ function unicodeWords(string) {
 }
 
 const hasUnicodeWord = RegExp.prototype.test.bind(
-  /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/,
+  /[a-z][A-Z]|[A-Z]{2}[a-z]|\d[a-zA-Z]|[a-zA-Z]\d|[^a-zA-Z0-9 ]/,
 )
 
 // eslint-disable-next-line no-control-regex
