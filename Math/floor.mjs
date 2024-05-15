@@ -1,3 +1,3 @@
 import { createRound } from '../utils/createRound.mjs'
 
-export const ceil = createRound('ceil')
+export const floor = createRound('floor')
