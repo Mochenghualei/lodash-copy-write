@@ -1,5 +1,3 @@
-import { add } from './Math/add.mjs'
+import _ from 'lodash'
 
-const res = add(20)
-
-console.log(res)
+console.log(_.iteratee)
